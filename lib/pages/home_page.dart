@@ -9,12 +9,23 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 
-class HomePage extends StatelessWidget {
+
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => HomePageState();
+}
+
+class HomePageState extends State<HomePage> {
   final box = GetStorage();
   User? user = FirebaseAuth.instance.currentUser;
-
+  @override
+  void initState() {
+    super.initState();
+    fetchData(); // Fetch initial data when the widget is initialized.
+  }
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       drawer: Drawer(
         child: ListView(
@@ -24,7 +35,7 @@ class HomePage extends StatelessWidget {
               child: Column(
                 children: [
                   CircleAvatar(
-                    radius: 50,
+                    radius: 40,
                     backgroundColor: Colors.white,
                     child: Icon(
                       Icons.person,
@@ -35,12 +46,13 @@ class HomePage extends StatelessWidget {
                     height: 5,
                   ),
                   Text(
-                    'Admin',
+                    '$currentUsername',
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                         fontSize: 20),
                   ),
+                  Text("$cmail",style: TextStyle(color: Colors.white70),)
                 ],
               ),
               decoration: BoxDecoration(

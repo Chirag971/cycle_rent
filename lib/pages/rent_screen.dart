@@ -4,6 +4,7 @@ import 'package:cycle_ranting/pages/wallet_page.dart';
 import 'package:cycle_ranting/variables.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:cycle_ranting/pages/home_page.dart';
+
 import 'package:flutter/material.dart';
 
 class RantPage extends StatefulWidget {
@@ -16,6 +17,7 @@ class RantPage extends StatefulWidget {
 }
 
 class _RentalScreenState extends State<RantPage> {
+
   final Cycle cycle;
   _RentalScreenState(this.cycle);
   int selectedDuration = 1; // Default rental duration in hours
@@ -121,12 +123,12 @@ class _RentalScreenState extends State<RantPage> {
                           } else {
                             return AlertDialog(
                               title: Text('Rental Confirmation'),
-                              content: (balance >= totalPrice)
+                              content: (currentBalance >= totalPrice)
                                   ? Text(
                                       'You rented ${cycle.name} for $selectedDuration hours.'
-                                      '\nBalance: ₹$balance'
+                                      '\nBalance: ₹$currentBalance'
                                       '\nPayment: -₹$totalPrice'
-                                      '\nRemaining: ₹${balance - totalPrice}')
+                                      '\nRemaining: ₹${currentBalance - totalPrice}')
                                   : Text("You Don't have Sufficient Ballance"
                                       "\nYou need to add ₹${totalPrice - balance}. to Your Wallet."),
                               actions: [
@@ -137,8 +139,9 @@ class _RentalScreenState extends State<RantPage> {
                                     child: Text("Cancle")),
                                 TextButton(
                                   onPressed: () {
-                                    if (balance >= totalPrice) {
-                                      balance -= totalPrice;
+                                    if (currentBalance >= totalPrice) {
+                                      currentBalance -= totalPrice;
+                                      updateData();
                                       var rcycle = RentedCycle(
                                           cycle.name,
                                           totalPrice,

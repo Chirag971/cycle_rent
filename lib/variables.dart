@@ -3,6 +3,68 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_storage/get_storage.dart';
 
 
+double currentBalance = -1;
+
+String currentUsername = "";
+
+String cmail = "";
+
+
+
+
+
+
+Future<void> fetchData() async {
+  final User? user = FirebaseAuth.instance.currentUser;
+
+  if (user != null) {
+    String userId = user.uid;
+
+
+
+    DocumentSnapshot snapshot = await FirebaseFirestore.instance
+        .collection('cycle')
+        .doc(userId) // Use the user's UID as the document ID
+        .get();
+
+    if (snapshot.exists) {
+
+        currentUsername = snapshot['userName'] ?? "";
+        cmail = snapshot['email'] ?? "";
+        currentBalance = snapshot['balance'] ?? 0;
+
+    } else {
+
+        currentUsername = "Admin";
+        cmail = "admin@gmail.com";
+        currentBalance = 0; // Set defaults if the document doesn't exist.
+
+    }
+  } else {
+    // Handle the case where no user is logged in.
+  }
+}
+
+Future<void> updateData() async {
+  final User? user = FirebaseAuth.instance.currentUser;
+
+  if (user != null) {
+    String userId = user.uid;
+
+    double newBalance = double.tryParse(currentBalance.toString()) ?? 0;
+
+    await FirebaseFirestore.instance
+        .collection('cycle')
+        .doc(userId) // Use the user's UID as the document ID
+        .update({'balance': newBalance});
+
+    fetchData(); // Fetch updated data after the update is complete.
+  } else {
+    // Handle the case where no user is logged in.
+  }
+}
+
+
 
 
 double balance = 300;

@@ -27,7 +27,7 @@ class _WalletScreenState extends State<WalletPage> {
               color: Theme.of(context).colorScheme.inversePrimary,
             ),
             Text(
-              'Balance: ₹${balance.toStringAsFixed(2)}',
+              'Balance: ₹${currentBalance.toStringAsFixed(2)}',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -84,7 +84,7 @@ class _AddMoneyScreenState extends State<AddMoneyScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  'Current Balance: ₹${balance.toStringAsFixed(2)}',
+                  'Current Balance: ₹${currentBalance.toStringAsFixed(2)}',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -111,8 +111,9 @@ class _AddMoneyScreenState extends State<AddMoneyScreen> {
                         double.tryParse(amountController.text) ?? 0.0;
                     setState(() {
                       addedAmount = amount;
-                      balance += (amount > 0) ? amount : 0;
-                      balance = (balance > 2000) ? 2000 : balance;
+                      currentBalance += (amount > 0) ? amount : 0;
+                      currentBalance = (currentBalance > 2000) ? 2000 : currentBalance;
+                      updateData();
                       Navigator.pop(context);
                       Navigator.pushReplacement(
                           context,
