@@ -130,7 +130,7 @@ class _RentalScreenState extends State<RantPage> {
                                       '\nPayment: -₹$totalPrice'
                                       '\nRemaining: ₹${currentBalance - totalPrice}')
                                   : Text("You Don't have Sufficient Ballance"
-                                      "\nYou need to add ₹${totalPrice - balance}. to Your Wallet."),
+                                      "\nYou need to add ₹${totalPrice - currentBalance}. to Your Wallet."),
                               actions: [
                                 TextButton(
                                     onPressed: () {
@@ -164,7 +164,7 @@ class _RentalScreenState extends State<RantPage> {
                                                   WalletPage()));
                                     }
                                   },
-                                  child: (balance >= totalPrice)
+                                  child: (currentBalance >= totalPrice)
                                       ? Text('Pay')
                                       : Text('Add Balance'),
                                 ),

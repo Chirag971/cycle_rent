@@ -1,5 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cycle_ranting/pages/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 
 
@@ -67,9 +70,9 @@ Future<void> updateData() async {
 
 
 
-double balance = 300;
-String email = "";
-String userName = "";
+// double balance = 300;
+// String email = "";
+// String userName = "";
 
 class Cycle {
   final String name;
