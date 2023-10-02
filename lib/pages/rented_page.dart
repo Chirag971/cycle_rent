@@ -8,7 +8,7 @@ class RentedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Trips${rentedCyclesList.length}'),
+        title: Text('My Trips'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: (rentedCyclesList.length != 0)

@@ -34,7 +34,7 @@ class HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   CircleAvatar(
-                    radius: 37,
+                    radius: 40,
                     backgroundColor: Colors.white,
                     child: Icon(
                       Icons.person,
@@ -53,7 +53,7 @@ class HomePageState extends State<HomePage> {
                   ),
                   Text(
                     "$cmail",
-                    style: TextStyle(color: Colors.white70),
+                    style: TextStyle(color: Colors.white, fontSize: 12),
                   )
                 ],
               ),
