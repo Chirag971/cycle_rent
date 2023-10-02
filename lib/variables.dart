@@ -13,10 +13,6 @@ String currentUsername = "";
 String cmail = "";
 
 
-
-
-
-
 Future<void> fetchData() async {
   final User? user = FirebaseAuth.instance.currentUser;
 

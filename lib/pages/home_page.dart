@@ -9,7 +9,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 
-
 class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => HomePageState();
@@ -23,9 +22,9 @@ class HomePageState extends State<HomePage> {
     super.initState();
     fetchData(); // Fetch initial data when the widget is initialized.
   }
+
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       drawer: Drawer(
         child: ListView(
@@ -35,11 +34,11 @@ class HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   CircleAvatar(
-                    radius: 40,
+                    radius: 37,
                     backgroundColor: Colors.white,
                     child: Icon(
                       Icons.person,
-                      size: 60,
+                      size: 55,
                     ),
                   ),
                   SizedBox(
@@ -52,7 +51,10 @@ class HomePageState extends State<HomePage> {
                         color: Colors.white,
                         fontSize: 20),
                   ),
-                  Text("$cmail",style: TextStyle(color: Colors.white70),)
+                  Text(
+                    "$cmail",
+                    style: TextStyle(color: Colors.white70),
+                  )
                 ],
               ),
               decoration: BoxDecoration(
