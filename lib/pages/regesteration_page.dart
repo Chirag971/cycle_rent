@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cycle_ranting/firebase/firebase_auth/firebase_auth_services.dart';
 import 'package:cycle_ranting/pages/bottomnavi_page.dart';
+import 'package:cycle_ranting/pages/login_page.dart';
 import 'package:cycle_ranting/pages/regesteration_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -160,14 +161,14 @@ class _RegistrationPageState extends State<RegistrationPage> {
     if (user != null) {
       await docUser
           .doc(user.uid)
-          .set({'userName': username, 'balance': 200, 'email': email});
+          .set({'userName': username, 'balance': 0, 'email': email});
       box.write('uid', '${user.uid}');
       Navigator.of(context).pop();
 
       print("User is SuccessFully SignedIn");
       Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => BottomNavi(0)),
+          MaterialPageRoute(builder: (context) => LoginPage()),
           (route) => false);
     } else {
       Navigator.of(context).pop();
