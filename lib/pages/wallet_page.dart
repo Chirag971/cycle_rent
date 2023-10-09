@@ -67,6 +67,11 @@ class _AddMoneyScreenState extends State<AddMoneyScreen> {
   TextEditingController amountController = TextEditingController();
   double addedAmount = 0.0;
 
+  void initState() {
+    super.initState();
+    fetchData(); // Fetch initial data when the widget is initialized.
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
