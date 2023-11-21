@@ -5,6 +5,17 @@
 
 A new Flutter project.
 
+Summary
+The "Cycle Renting App" is a mobile application developed using Flutter, designed to
+enhance the cycling experience by providing a platform for users to rent cycles and
+access valuable cycle-related information.The project leverages the Flutter
+framework for cross-platform compatibility and Firebase for secure and efficient
+backend operations. The app allows users to rent cycles, view cycle details, and
+manage their profiles. Key features include secure user authentication, real-time cycle
+ratings, and wallet functionality for convenient transactions. This project aims to
+create an engaging and informative environment for cycling enthusiasts while
+fostering user engagement through seamless and intuitive user experiences.
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
