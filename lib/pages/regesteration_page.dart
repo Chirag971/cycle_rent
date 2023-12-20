@@ -168,7 +168,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
       print("User is SuccessFully SignedIn");
       Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => LoginPage()),
+          MaterialPageRoute(builder: (context) => BottomNavi(0)),
           (route) => false);
     } else {
       Navigator.of(context).pop();
