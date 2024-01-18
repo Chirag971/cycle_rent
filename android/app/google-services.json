@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "676346845320",
-    "project_id": "rant-cycle",
-    "storage_bucket": "rant-cycle.appspot.com"
+    "project_number": "85499951449",
+    "project_id": "cycle-5ac5c",
+    "storage_bucket": "cycle-5ac5c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:676346845320:android:127161d75cded65dede73d",
+        "mobilesdk_app_id": "1:85499951449:android:e86ae64a3007a9bdc6f448",
         "android_client_info": {
           "package_name": "com.example.cycle_ranting"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAAir0zQZc5OeQD8QJIr73S2Wp2r-_fjps"
+          "current_key": "AIzaSyDA7yi6opiECEHkT90LVL5WOvndTKtyRxU"
         }
       ],
       "services": {
